@@ -29,6 +29,7 @@ function listswapclicklistener(event){
 function addtaskclicklistener(event){
 	//var data = [];
 	//ddTodoRow(data);
+	Ti.API.info('addTaskClickListener');
 	addTask();
 }
 
@@ -40,23 +41,39 @@ function addtaskclicklistener(event){
 
 
 function addTask() {  
- // create the test fighter model  
+ // create the task model
+ //typo modifed 
+ var currentDateTime = new Date();
+ var d = currentDateTime.getDate();
+ var y = currentDateTime.getFullYear();
+ var m = currentDateTime.getMonth() + 1;
+ var hr = currentDateTime.getHours();
+ var min = currentDateTime.getMinutes();
+ var sec = currentDateTime.getSeconds();
+ var ms = currentDateTime.getMilliseconds();
+ 
+ 
  var model = Alloy.createModel('task', {  
-  status: 'Pending',  
-  modified: '00/00/00',
-  content: 'New Task' + counter ,
-  image: ''   
+  	status: 'Pending',  
+  	modifed: m + '/' + d + '/' + y + '-' + hr + ':' + min + ':' + sec + ':' + ms ,
+  	content: 'New Task' + counter ,
+  	image: ''   
  });  
  counter++;  
   
  // add model to the collection and save it to sqlite  
+ Ti.API.warn('addTask');
  task.add(model);  
- model.save();  
-  
+ model.save(); 
  // let's refresh so we can see the ids coming from the   
  // autoincrement field in the sqlite database in the   
  // row click alerts  
  task.fetch();  
+ 
+ task.comparator = function(t) {
+  	return t.get('modifed');
+ };
+  
 }  
 
 function deleteAll(){
@@ -79,8 +96,14 @@ function filterFunction(collection) {
 	else{
 		return collection.where({status:"Completed"});
 	}
+	
+	task.comparator = function(t) {
+ 		 return t.get('modifed');
+	};
  	
 }
+
+
   
 // Free model-view data binding resources when this view-controller closes
 $.todowin.addEventListener('close', function() {

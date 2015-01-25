@@ -7,8 +7,13 @@ if ($model) {
  	Ti.API.info($model.toJSON());
 }
 
+
+
 $.finishbutton.addEventListener('click', finishbuttonclicklistener);
 
+ var dt = $.row.model.modifed;
+ $.date.text = dt.substring(0,dt.length-7);
+ 
 
 function finishbuttonclicklistener(event){
 	 if($.status.text = "Pending"){

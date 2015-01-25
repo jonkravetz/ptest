@@ -43,7 +43,7 @@
 "#date": {
 	color: '#333',
 	font: {
-		fontSize: 9
+		fontSize: 8
 	},
 	left:"75%",
 	width: "25%",

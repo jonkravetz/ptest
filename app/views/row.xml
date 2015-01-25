@@ -3,7 +3,7 @@
 		<ImageView id="img" image="appicon.png" />
 		<Label id="content"  text="{content}"/>  
 		<Label id="status" text="{status}"/>  
-		<Label id="date" text="mm/dd/yy"></Label>
+		<Label id="date" text="{modifed}"></Label>
 		<Button id="finishbutton" title="Finished"></Button>
 	</TableViewRow>
 </Alloy>

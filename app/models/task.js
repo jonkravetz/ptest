@@ -1,9 +1,9 @@
 exports.definition = {
 	config: {
 		columns: {
-		    "content": "text",
-		    "modifed": "text",
-		    "status": "text",
+		    "status": "string",
+		    "modifed": "date",
+		    "content": "string",
 		    "image": "blob"
 		},
 		adapter: {
