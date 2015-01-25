@@ -1,0 +1,52 @@
+"#row": {
+	color: '#000',
+	font: {
+		fontSize: 10,
+		fontWeight: 'bold'
+	},
+	width: Ti.UI.SIZE,
+}
+
+"#img": {
+	backgroundColor: '#ccc',
+	font: {
+		fontSize: 10,
+		fontWeight: 'bold'
+	},
+	left:"0",
+	width: "25%"
+}
+
+"#content": {
+	color: '#333',
+	font: {
+		fontSize: 12,
+		fontWeight: 'bold'
+	},
+	left:"25%",
+	width: "50%",
+	textAlign: "center"
+}
+
+"#status": {
+	color: '#333',
+	font: {
+		fontSize: 9,
+		fontWeight: 'bold'
+	},
+	left:"75%",
+	width: "25%",
+	bottom:"30%",
+	textAlign: "center"
+}
+
+"#date": {
+	color: '#333',
+	font: {
+		fontSize: 9
+	},
+	left:"75%",
+	width: "25%",
+	top:"30%",
+	textAlign: "center"
+}
