@@ -8,6 +8,5 @@
     "os:ios": {},
     "os:mobileweb": {},
     "dependencies": {
-        "listitem": "1.0"
     }
 }
