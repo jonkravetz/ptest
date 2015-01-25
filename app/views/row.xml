@@ -1,8 +1,9 @@
 <Alloy>
 	<TableViewRow id="row" height="60">
 		<ImageView id="img" image="appicon.png" />
-		<Label id="content" text="Task Name"></Label>
-		<Label id="status" text="Completed"></Label>
+		<Label id="content"  text="{content}"/>  
+		<Label id="status" text="{status}"/>  
 		<Label id="date" text="mm/dd/yy"></Label>
+		<Button id="finishbutton" title="Finished"></Button>
 	</TableViewRow>
 </Alloy>

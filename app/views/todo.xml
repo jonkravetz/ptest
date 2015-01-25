@@ -1,9 +1,12 @@
 <Alloy>
+	
 	<Window id="todowin" class="container">
-		 <TableView top="50">
-		 	<TableViewSection>
-		 		<Widget src="listitem"></Widget>
-		 	</TableViewSection>
-		 </TableView>
+		<TableView id="todotableview" top="50" bottom="50" dataCollection="task" dataFilter="filterFunction">
+		 	<Require src="row"></Require>
+		</TableView>
+		 <View bottom="0" height="50">
+		 	<Button id="listswap" width="50%"  title="Pending"></Button>
+		 	<Button id="addtask" right="2%" title="+"></Button>
+		 </View>
 	</Window>
 </Alloy>

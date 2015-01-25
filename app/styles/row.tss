@@ -31,12 +31,12 @@
 "#status": {
 	color: '#333',
 	font: {
-		fontSize: 9,
-		fontWeight: 'bold'
+		fontSize: 9
+		
 	},
 	left:"75%",
 	width: "25%",
-	bottom:"30%",
+	bottom:"40%",
 	textAlign: "center"
 }
 
@@ -47,6 +47,19 @@
 	},
 	left:"75%",
 	width: "25%",
-	top:"30%",
+	top:"20%",
+	textAlign: "center"
+}
+
+"#finishbutton": {
+	color: '#333',
+	backgroundColor: '999',
+	font: {
+		fontSize: 9,
+		fontWeight:'bold'
+	},
+	left:"75%",
+	width: "25%",
+	bottom:"0",
 	textAlign: "center"
 }
