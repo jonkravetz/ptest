@@ -1,5 +1,5 @@
 <Alloy>
-	<TableViewRow id="row" height="60">
+	<TableViewRow id="row" height="60" title="{content}">
 		<ImageView id="img" image="appicon.png" />
 		<Label id="content"  text="{content}"/>  
 		<Label id="status" text="{status}"/>  

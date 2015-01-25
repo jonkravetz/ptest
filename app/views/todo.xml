@@ -1,7 +1,11 @@
 <Alloy>
 	
 	<Window id="todowin" class="container">
-		<TableView id="todotableview" top="50" bottom="50" dataCollection="task" dataFilter="filterFunction">
+		<TableView id="todotableview" top="50" bottom="50" dataCollection="task" dataFilter="filterFunction" filterAttribute="title">
+			 <!-- search, shorthand with Ti.UI.SearchBar -->
+      		<SearchBar platform="ios"/>
+      		<!-- search, shorthand with Ti.UI.Android.SearchView -->
+      		<SearchView ns="Ti.UI.Android" platform="android"/>
 		 	<Require src="row"></Require>
 		</TableView>
 		 <View bottom="0" height="50">
