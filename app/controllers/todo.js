@@ -1,14 +1,19 @@
+ var applib = require('applib');
+
 //Variables
 var tdata = [];
-var counter = 1;  
 var task = Alloy.Collections.task; 
 
-
+Alloy.Globals.todowin = $.todowin;
 //Intialization
 $.listswap.addEventListener('click',listswapclicklistener);
 $.addtask.addEventListener('click', addtaskclicklistener);
-deleteAll();
 
+//utility function for development
+//deleteAll();
+
+//inital fetch
+applib.fetchData();
 
 //Event Listeners
 
@@ -23,7 +28,7 @@ function listswapclicklistener(event){
 		$.listswap.title="Pending";
 	}
 	
-	task.fetch(); 
+	applib.fetchData();
 }
 
 function addtaskclicklistener(event){
@@ -43,36 +48,26 @@ function addtaskclicklistener(event){
 function addTask() {  
  // create the task model
  //typo modifed 
- var currentDateTime = new Date();
- var d = currentDateTime.getDate();
- var y = currentDateTime.getFullYear();
- var m = currentDateTime.getMonth() + 1;
- var hr = currentDateTime.getHours();
- var min = currentDateTime.getMinutes();
- var sec = currentDateTime.getSeconds();
- var ms = currentDateTime.getMilliseconds();
+ 
+ //Creating datetime string because alloy doesn't seem to be saving in correctly in sqlite db.
+ 
  
  
  var model = Alloy.createModel('task', {  
   	status: 'Pending',  
-  	modifed: m + '/' + d + '/' + y + '-' + hr + ':' + min + ':' + sec + ':' + ms ,
-  	content: 'New Task' + counter ,
+  	modifed: applib.getFormattedDate(),
+  	content: 'New Task' ,
   	image: ''   
  });  
- counter++;  
+
   
  // add model to the collection and save it to sqlite  
  Ti.API.warn('addTask');
  task.add(model);  
  model.save(); 
- // let's refresh so we can see the ids coming from the   
- // autoincrement field in the sqlite database in the   
- // row click alerts  
- task.fetch();  
- 
- task.comparator = function(t) {
-  	return t.get('modifed');
- };
+   
+
+ applib.fetchData();
   
 }  
 
@@ -97,9 +92,7 @@ function filterFunction(collection) {
 		return collection.where({status:"Completed"});
 	}
 	
-	task.comparator = function(t) {
- 		 return t.get('modifed');
-	};
+	applib.fetchData();
  	
 }
 

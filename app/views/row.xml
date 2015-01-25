@@ -1,9 +1,10 @@
 <Alloy>
-	<TableViewRow id="row" height="60" title="{content}">
+	<TableViewRow id="row" height="60" name="{content}">
 		<ImageView id="img" image="appicon.png" />
 		<Label id="content"  text="{content}"/>  
 		<Label id="status" text="{status}"/>  
 		<Label id="date" text="{modifed}"></Label>
 		<Button id="finishbutton" title="Finished"></Button>
+		<Button id="editbutton" title="Edit"></Button>
 	</TableViewRow>
 </Alloy>

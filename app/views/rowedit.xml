@@ -1,0 +1,11 @@
+<Alloy>
+	<Model  id="editModel" src="task" instance="true"></Model>
+	<View id="roweditview" model="$.editModel">
+		<ImageView id="img" image="appicon.png" />
+		<TextField id="content" value="{$.editModel.content}"/>  
+		<Label id="status" text="{$.editModel.status}"></Label>  
+		<Label id="date" text="{$.editModel.modifed}"></Label>
+		<Button id="savebutton" title="Save"></Button>
+		<Button id="cancelbutton" title="Cancel"></Button>
+	</View>
+</Alloy>

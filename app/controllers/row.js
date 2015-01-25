@@ -1,18 +1,27 @@
+ var applib = require('applib');
+
+ 
  Ti.API.info("listitem row launched");
  
  // Attach the bound model ($model) to the row so 
 // we can access it in a click event.
 if ($model) {
  	$.row.model = $model.toJSON();
- 	Ti.API.info($model.toJSON());
+ 	//Ti.API.info($model.toJSON());
 }
 
 
 
 $.finishbutton.addEventListener('click', finishbuttonclicklistener);
+$.editbutton.addEventListener('click', editbuttonclicklistener);
+
 
  var dt = $.row.model.modifed;
- $.date.text = dt.substring(0,dt.length-7);
+$.date.text = dt.substring(0,16);
+ 
+ if($.status.text == "Completed"){
+ 	$.finishbutton.visible = false;
+ }
  
 
 function finishbuttonclicklistener(event){
@@ -29,3 +38,7 @@ function finishbuttonclicklistener(event){
 	 	
 };
 
+function editbuttonclicklistener(event){
+	Ti.API.info("addeditviewA");
+	applib.addEditView($model);
+};
