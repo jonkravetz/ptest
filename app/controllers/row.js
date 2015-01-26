@@ -14,6 +14,7 @@ if ($model) {
 
 $.finishbutton.addEventListener('click', finishbuttonclicklistener);
 $.editbutton.addEventListener('click', editbuttonclicklistener);
+$.img.addEventListener('click', imgclicklistener);
 
 
  var dt = $.row.model.modifed;
@@ -22,6 +23,22 @@ $.date.text = dt.substring(0,16);
  if($.status.text == "Completed"){
  	$.finishbutton.visible = false;
  }
+ 
+ //If image doesn't exists create placeholder...if it does, show it!
+ 	var fname = $.row.model.alloy_id + ".png";
+    var file = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory,fname);
+   
+    if(file.exists()){
+    	Ti.API.info('image exists');
+		$.img.image = file.nativePath;
+	}
+	else{
+		 Ti.API.info('noimage');
+    	 var imagefile = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "camera.png");
+    	 file.write(imagefile);
+    	 $.img.image = file.nativePath;
+	}
+
  
 
 function finishbuttonclicklistener(event){
@@ -37,6 +54,13 @@ function finishbuttonclicklistener(event){
 	 }
 	 	
 };
+
+function imgclicklistener(event){
+	
+	Ti.API.info('imgclicklistener');
+	Alloy.createController("imgzoom",  $.img.image);
+	
+}
 
 function editbuttonclicklistener(event){
 	Ti.API.info("addeditviewA");

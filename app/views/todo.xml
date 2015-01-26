@@ -1,7 +1,6 @@
 <Alloy>
-	
 	<Window id="todowin" class="container">
-		<TableView id="todotableview" top="50" bottom="50" dataCollection="task" dataFilter="filterFunction" filterAttribute="name">
+		<TableView id="todotableview" bottom="50" dataCollection="task" dataFilter="filterFunction" filterAttribute="name">
 			 <!-- search, shorthand with Ti.UI.SearchBar -->
       		<SearchBar platform="ios"/>
       		<!-- search, shorthand with Ti.UI.Android.SearchView -->

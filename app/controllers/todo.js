@@ -10,11 +10,14 @@ $.listswap.addEventListener('click',listswapclicklistener);
 $.addtask.addEventListener('click', addtaskclicklistener);
 
 //utility function for development
-//deleteAll();
+deleteAll();
 
 //inital fetch
 applib.fetchData();
 
+if(OS_IOS){
+	$.todowin.top = "20";
+}
 //Event Listeners
 
 function listswapclicklistener(event){

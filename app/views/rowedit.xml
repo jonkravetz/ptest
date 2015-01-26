@@ -1,7 +1,8 @@
 <Alloy>
 	<Model  id="editModel" src="task" instance="true"></Model>
 	<View id="roweditview" model="$.editModel">
-		<ImageView id="img" image="appicon.png" />
+		<ImageView id="imgbutton" ></ImageView>
+		<Label id="imglabel" text="click to edit"></Label>
 		<TextField id="content" value="{$.editModel.content}"/>  
 		<Label id="status" text="{$.editModel.status}"></Label>  
 		<Label id="date" text="{$.editModel.modifed}"></Label>

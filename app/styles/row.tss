@@ -1,14 +1,9 @@
 "#row": {
-	color: '#000',
-	font: {
-		fontSize: 10,
-		fontWeight: 'bold'
-	},
-	width: Ti.UI.SIZE,
+	backgroundColor:"#eee",
+	width: Ti.UI.SIZE
 }
 
 "#img": {
-	backgroundColor: '#ccc',
 	font: {
 		fontSize: 10,
 		fontWeight: 'bold'
@@ -20,7 +15,7 @@
 "#content": {
 	color: '#333',
 	font: {
-		fontSize: 12,
+		fontSize: 14,
 		fontWeight: 'bold'
 	},
 	left:"25%",
@@ -31,7 +26,7 @@
 "#status": {
 	color: '#333',
 	font: {
-		fontSize: 9
+		fontSize: 12
 		
 	},
 	left:"75%",
@@ -47,15 +42,14 @@
 	},
 	left:"75%",
 	width: "25%",
-	top:"20%",
+	bottom:"55%",
 	textAlign: "center"
 }
 
 "#finishbutton": {
-	color: '#333',
-	backgroundColor: '999',
+	color:"#22a5cc",
 	font: {
-		fontSize: 8,
+		fontSize: 12,
 		fontWeight:'bold'
 	},
 	left:"75%",
@@ -66,15 +60,38 @@
 }
 
 "#editbutton": {
-	color: '#333',
-	backgroundColor: '999',
+	color:"#22a5cc",
 	font: {
-		fontSize: 8,
+		fontSize: 12,
 		fontWeight:'bold'
 	},
 	left:"75%",
 	width: "25%",
 	top:"0",
+	height:"20%",
+	textAlign: "center"
+}
+
+"#emailbutton": {
+	color:"#22a5cc",
+	font: {
+		fontSize: 12
+	},
+	left:"50%",
+	width: "18%",
+	bottom:"0",
+	height:"20%",
+	textAlign: "center"
+}
+
+"#textbutton": {
+	color:"#22a5cc",
+	font: {
+		fontSize: 12
+	},
+	left:"30%",
+	width: "18%",
+	bottom:"0",
 	height:"20%",
 	textAlign: "center"
 }
