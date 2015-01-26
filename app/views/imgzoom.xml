@@ -1,6 +1,6 @@
 <Alloy>
-	<Window id="zoomwin" modal="true" backgroundColor="#333" height="100%" width="100%">
+	<Window id="zoomwin" backgroundColor="#333" height="100%" width="100%">
 		<ImageView id="img"></ImageView>
-		<Button bottom="2" id="closebutton" title="close"></Button>
+		<Button  id="closebutton" bottom="2" title="close"></Button>
 	</Window>
 </Alloy>

@@ -10,7 +10,7 @@ $.listswap.addEventListener('click',listswapclicklistener);
 $.addtask.addEventListener('click', addtaskclicklistener);
 
 //utility function for development
-deleteAll();
+//deleteAll();
 
 //inital fetch
 applib.fetchData();
